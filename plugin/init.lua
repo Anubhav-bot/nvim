@@ -1,0 +1,3 @@
+-- require('telescope')
+-- require('harpoon')
+-- no need to require, all files in this directory are auto sourced
