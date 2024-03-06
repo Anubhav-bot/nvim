@@ -9,8 +9,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<leader>c", "<cmd>noh<CR>")
 vim.keymap.set("n", "*", "*N")
 vim.keymap.set("n", "#", "#N")
+vim.keymap.set("n", "<leader>to",  "<cmd>term<CR>")
 
-
+-- terminal mode keymaps
+vim.keymap.set("t", "jk", "<C-\\><C-n>")
 
 -- insert mode keymaps 
 vim.keymap.set("i", "jk", "<Esc>")
