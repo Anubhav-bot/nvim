@@ -21,6 +21,9 @@ require("mason-lspconfig").setup()
 local servers = {
     clangd = {},
     pyright = {},
+    pylsp = {},
+    -- volar = {},
+    vuels = {},
     html = { filetypes = { "html", "twig", "hbs"} },
 
     lua_ls = {
@@ -31,6 +34,7 @@ local servers = {
             -- diagnostics = { disable = { "missing-fields" } },
         },
     },
+
 }
 -- require("neodev").setup()
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
