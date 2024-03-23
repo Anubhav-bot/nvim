@@ -1,5 +1,6 @@
 --relative-number
 vim.opt.relativenumber = true
+vim.opt.number = true
 
 vim.opt.clipboard="unnamedplus"
 
