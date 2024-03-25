@@ -11,6 +11,7 @@ vim.keymap.set("n", "<leader>c", "<cmd>noh<CR>")
 vim.keymap.set("n", "<leader>*", "*N")
 vim.keymap.set("n", "<leader>#", "#N")
 vim.keymap.set("n", "<leader>to",  "<cmd>term<CR>")
+vim.keymap.set("n", "<F9>", "<cmd>!make all run<CR>")
 
 -- terminal mode keymaps
 vim.keymap.set("t", "jk", "<C-\\><C-n>")
