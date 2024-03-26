@@ -22,7 +22,7 @@ local servers = {
     clangd = {},
     pyright = {},
     pylsp = {},
-    -- volar = {},
+    emmet_ls ={},
     vuels = {},
     html = { filetypes = { "html", "twig", "hbs"} },
 
