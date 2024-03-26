@@ -22,3 +22,7 @@ vim.keymap.set("i", "jk", "<Esc>")
 
 -- visual mode keymaps 
 vim.keymap.set("x", "<leader>p", "\"_dP")
+
+--testing stuff
+vim.keymap.set("n", "<leader>ch", vim.fn["codeium#Chat"])
+
