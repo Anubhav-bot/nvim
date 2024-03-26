@@ -5,6 +5,14 @@ return {
     },
 
     {
+        'nvim-lualine/lualine.nvim',
+        dependencies = { 'nvim-tree/nvim-web-devicons' },
+        config = function()
+            require('lualine').setup()
+        end
+    },
+
+    {
         "nvim-telescope/telescope.nvim",
         dependencies = {
             "plenary.nvim",
@@ -18,16 +26,8 @@ return {
     },
 
     {
-        "Exafunction/codeium.nvim",
-        dependencies = {
-            "nvim-lua/plenary.nvim",
-            "hrsh7th/nvim-cmp",
-        },
-        config = function()
-            require("codeium").setup({
-                enable_chat = true;
-            })
-        end
+      'Exafunction/codeium.vim',
+      event = 'BufEnter',
     },
 
     {
@@ -75,5 +75,4 @@ return {
             "rafamadriz/friendly-snippets",
         },
     },
-
 }
