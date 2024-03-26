@@ -13,8 +13,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup("timothy.lazy")
 
-
-
 require("mason").setup()
 require("mason-lspconfig").setup()
 
@@ -106,5 +104,15 @@ cmp.setup {
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "path" },
+        { name = "codeium" },
     },
+
+    formatting = {
+        format = require('lspkind').cmp_format({
+            mode = "symbol",
+            maxwidth = 50,
+            ellipsis_char = '...',
+            symbol_map = { Codeium = "", }
+        })
+    }
 }

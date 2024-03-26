@@ -25,6 +25,7 @@ return {
         },
         config = function()
             require("codeium").setup({
+                enable_chat = true;
             })
         end
     },
@@ -56,6 +57,10 @@ return {
             -- Additional lua configuration, makes nvim stuff amazing!
            -- "folke/neodev.nvim",
         },
+    },
+
+    {
+        "onsails/lspkind.nvim",
     },
 
     {
