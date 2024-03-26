@@ -60,10 +60,6 @@ return {
     },
 
     {
-        "onsails/lspkind.nvim",
-    },
-
-    {
         -- Autocompletion
         "hrsh7th/nvim-cmp",
         dependencies = {
