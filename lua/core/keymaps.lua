@@ -31,6 +31,7 @@ vim.keymap.set("n", "<leader>*", "*N", { desc = "Highlight all words matching th
 vim.keymap.set("n", "<leader>#", "#N", { desc = "Highlight all words matching the one under the cursor backwards" })
 vim.keymap.set("n", "<C-s>", "<cmd>w<CR>", { desc = "Save buffer to file" })
 
+vim.keymap.set("n", "<leader>fa", "za", { desc = "Toggle folds" })
 
 -- }}}
 
