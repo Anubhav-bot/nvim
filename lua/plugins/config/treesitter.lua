@@ -3,6 +3,7 @@ return {
     build = ":TSUpdate",
     config = function () 
         local configs = require("nvim-treesitter.configs")
+        require 'nvim-treesitter.install'.compilers = { 'zig', 'gcc', 'clang' }
 
         configs.setup({
             ensure_installed = { "c", "lua", "vim", "vimdoc", "gdscript", "godot_resource", "gdshader", "javascript", "html", "vue", "css" },
