@@ -18,8 +18,8 @@ vim.keymap.set("i", "<C-s>", "<cmd>w<CR>", { desc = "Save buffer to file" })
 
 -- vim.keymap.set("n", "<leader>pv", vim.cmd.Ex)
 -- vim.keymap.set("n", "<leader>pv", ":NvimTreeFindFileToggle<CR>") -> Inside nerd-tree.lua
-vim.keymap.set("n", "<C-u>", "<C-u>zz")
-vim.keymap.set("n", "<C-d>", "<C-d>zz")
+-- vim.keymap.set("n", "<C-u>", "<C-u>zz")
+-- vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<leader>c", "<cmd>noh<CR>", { desc = "Clear highlihgts" })
 
 vim.keymap.set("n", "<leader>wh", "<C-w>h")
@@ -66,4 +66,7 @@ vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Enter Normal mode" })
 
 -- visual mode keymaps 
 vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "Put and preserve register contents" })
+vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
+vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- }}}
+

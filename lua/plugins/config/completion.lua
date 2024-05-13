@@ -5,7 +5,6 @@ return {
         "hrsh7th/cmp-path",
         "hrsh7th/cmp-cmdline",
         "hrsh7th/cmp-buffer",
-        "L3MON4D3/LuaSnip",
         "saadparwaiz1/cmp_luasnip",
         "rafamadriz/friendly-snippets",
     },
@@ -14,16 +13,17 @@ return {
 
         local cmp = require("cmp")
         local cmp_buffer = require('cmp_buffer')
+        local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
         require("luasnip.loaders.from_vscode").lazy_load()
-
         cmp.setup({
             mapping = cmp.mapping.preset.insert({
+                ['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+                ['<C-n>'] = cmp.mapping.select_next_item(cmp_select),
+                ['<CR>'] = cmp.mapping.confirm({ select = true }),
+                ['<C-Space>'] = cmp.mapping.complete(),
                 ['<C-b>'] = cmp.mapping.scroll_docs(-4),
                 ['<C-f>'] = cmp.mapping.scroll_docs(4),
-                ['<C-Space>'] = cmp.mapping.complete(),
-                ['<C-e>'] = cmp.mapping.abort(),
-                ['<CR>'] = cmp.mapping.confirm({ select = true }),
             }),
 
             snippet = {
@@ -39,33 +39,33 @@ return {
             },
                 {
                     { name = 'buffer' },
-                    option = {
-                        keyword_length = 3,  -- no of keys that need to be pressed to trigger
-                        keyword_pattern = [[\k\+]],
-                        get_bufnrs = function()
-                            local bufs = {}
-                            local buf
-                            local byte_size
-                            -- return vim.api.nvim_list_bufs()
-                            for _, win in ipairs(vim.api.nvim_list_wins()) do
-                                buf = vim.api.nvim_win_get_buf(win)
-                                byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
-                                if byte_size < 1024 * 1024 then
-                                    bufs[buf] = true
-                                end
-                            end
-
-                            return vim.tbl_keys(bufs)
-                        end,
-                    }
+                --     option = {
+                --         keyword_length = 3,  -- no of keys that need to be pressed to trigger
+                --         keyword_pattern = [[\k\+]],
+                --         get_bufnrs = function()
+                --             local bufs = {}
+                --             local buf
+                --             local byte_size
+                --             -- return vim.api.nvim_list_bufs()
+                --             for _, win in ipairs(vim.api.nvim_list_wins()) do
+                --                 buf = vim.api.nvim_win_get_buf(win)
+                --                 byte_size = vim.api.nvim_buf_get_offset(buf, vim.api.nvim_buf_line_count(buf))
+                --                 if byte_size < 1024 * 1024 then
+                --                     bufs[buf] = true
+                --                 end
+                --             end
+                --
+                --             return vim.tbl_keys(bufs)
+                --         end,
+                --     }
                 }),
 
-            sorting = {
-                comparators = {
-                    function(...) return cmp_buffer:compare_locality(...) end,
-                    -- The rest of your comparators...
-                }
-            },
+            -- sorting = {
+            --     comparators = {
+            --         function(...) return cmp_buffer:compare_locality(...) end,
+            --         -- The rest of your comparators...
+            --     }
+            -- },
         })
 
         -- `/` cmdline setup.
