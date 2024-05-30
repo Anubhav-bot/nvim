@@ -55,7 +55,7 @@ vim.keymap.set("v", "<leader>sF", ":s/\\(\\V<c-r>=expand('<cWORD>')<cr>\\)/")
 ---------------------- [END] Substitue stuff -------------------------------------}}}
 
 -- Miscellaneous stuff {{{
-vim.keymap.set("n", "<leader>to",  "<cmd>term<CR>", { desc = "open terminal" })
+-- vim.keymap.set("n", "<leader>to",  "<cmd>term<CR>", { desc = "open terminal" })
 vim.keymap.set("n", "<F9>", "<cmd>!make all run<CR>", { desc = "run 'make all run' from shell" })
 
 -- vim.keymap.set("n", "<leader>ch", vim.fn["codeium#Chat"])
