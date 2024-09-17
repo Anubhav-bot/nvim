@@ -6,7 +6,7 @@ return {
     },
     config = function ()
 
-        local function codeium_status() 
+        local function codeium_status()
             return [[{…}%3{codeium#GetStatusString()}]]
         end
 
