@@ -9,7 +9,7 @@ return {
         shading_factor = '1',
         start_in_insert = true,
         persist_size = 'true',
-        direction = 'float',
+        direction = 'horizontal',
         autochdir = true,
         shell = vim.o.shell,
         -- on_create = function(term)

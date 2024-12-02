@@ -6,9 +6,9 @@ return {
     },
     config = function ()
 
-        local function codeium_status()
-            return [[{…}%3{codeium#GetStatusString()}]]
-        end
+        -- local function codeium_status()
+        --     return [[{…}%3{codeium#GetStatusString()}]]
+        -- end
 
         require('lualine').setup {
             options = {
@@ -19,7 +19,7 @@ return {
             sections = {
                lualine_b = {
                     'branch',
-                    codeium_status,
+                    -- codeium_status,
                     'diff',
                     'diagnostics',
                }
