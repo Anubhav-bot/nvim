@@ -13,11 +13,19 @@ return {
 
 
     config = function()
-
         local cmp = require("cmp")
         local cmp_buffer = require('cmp_buffer')
         local cmp_select = { behavior = cmp.SelectBehavior.Select }
         local lspkind = require('lspkind')
+
+        --Autopairs setup
+        -- If you want insert `(` after select function or method item
+        local cmp_autopairs = require('nvim-autopairs.completion.cmp')
+        cmp.event:on(
+            'confirm_done',
+            cmp_autopairs.on_confirm_done()
+        )
+
 
         require("luasnip.loaders.from_vscode").lazy_load()
         cmp.setup({
@@ -54,15 +62,15 @@ return {
 
 
             sources = cmp.config.sources({
-                { name = 'nvim_lua' },
-                { name = 'nvim_lsp' },
-                { name = 'luasnip' },
-                { name = 'path' },
-            },
+                    { name = 'nvim_lua' },
+                    { name = 'nvim_lsp' },
+                    { name = 'luasnip' },
+                    { name = 'path' },
+                },
                 {
                     { name = 'buffer' },
                     option = {
-                        keyword_length = 3,  -- no of keys that need to be pressed to trigger
+                        keyword_length = 3, -- no of keys that need to be pressed to trigger
                         keyword_pattern = [[\k\+]],
                         get_bufnrs = function()
                             local bufs = {}
@@ -91,7 +99,7 @@ return {
         })
 
         -- `/` cmdline setup.
-        cmp.setup.cmdline({ '/', '?' } ,{
+        cmp.setup.cmdline({ '/', '?' }, {
             mapping = cmp.mapping.preset.cmdline(),
             sources = {
                 { name = 'buffer' }
@@ -104,14 +112,13 @@ return {
             sources = cmp.config.sources({
                 { name = 'path' }
             }, {
-                    {
-                        name = 'cmdline',
-                        option = {
-                            ignore_cmds = { 'Man', '!' }
-                        }
+                {
+                    name = 'cmdline',
+                    option = {
+                        ignore_cmds = { 'Man', '!' }
                     }
-                })
+                }
+            })
         })
-
     end
 }
