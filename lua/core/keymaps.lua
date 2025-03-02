@@ -1,4 +1,4 @@
--- *NOTE* 
+-- *NOTE*
 --
 -- This file contains generic keybindings only
 --
@@ -41,30 +41,33 @@ vim.keymap.set("n", "<leader>so", "*Ncgn", { desc = "Search for and substitute w
 vim.keymap.set("v", "<leader>so", "*Ncgn")
 
 -- [s]ubstitute in [l]ine
-vim.keymap.set("n", "<leader>sl", ":s/\\(<c-r>=expand('<cword>')<cr>\\)/", { desc = "Substitute command with cword as the search term" })
-vim.keymap.set("n", "<leader>sL", ":s/\\(<c-r>=expand('<cWORD>')<cr>\\)/", { desc = "Substitute command with cWORD as the search term" })
+vim.keymap.set("n", "<leader>sl", ":s/\\(<c-r>=expand('<cword>')<cr>\\)/",
+    { desc = "Substitute command with cword as the search term" })
+vim.keymap.set("n", "<leader>sL", ":s/\\(<c-r>=expand('<cWORD>')<cr>\\)/",
+    { desc = "Substitute command with cWORD as the search term" })
 
 -- [s]ubstitute word in [f]ile
-vim.keymap.set("n", "<leader>sf", ":%s/\\(<c-r>=expand('<cword>')<cr>\\)/", { desc = "Substitute command with cword as the search term [whole file]" })
+vim.keymap.set("n", "<leader>sf", ":%s/\\(<c-r>=expand('<cword>')<cr>\\)/",
+    { desc = "Substitute command with cword as the search term [whole file]" })
 vim.keymap.set("v", "<leader>sf", ":s/\\(<c-r>=expand('<cword>')<cr>\\)/")
 
 -- [s]ubstitute WORD in [F]ile
-vim.keymap.set("n", "<leader>sF", ":%s/\\(\\V<c-r>=expand('<cWORD>')<cr>\\)/", { desc = "Substitute command with cWORD as the search term [whole file]" })
+vim.keymap.set("n", "<leader>sF", ":%s/\\(\\V<c-r>=expand('<cWORD>')<cr>\\)/",
+    { desc = "Substitute command with cWORD as the search term [whole file]" })
 vim.keymap.set("v", "<leader>sF", ":s/\\(\\V<c-r>=expand('<cWORD>')<cr>\\)/")
 
 ---------------------- [END] Substitue stuff -------------------------------------}}}
 
 -- Miscellaneous stuff {{{
 -- vim.keymap.set("n", "<leader>to",  "<cmd>term<CR>", { desc = "open terminal" })
-vim.keymap.set("n", "<F9>", "<cmd>!make all run<CR>", { desc = "run 'make all run' from shell" })
+-- vim.keymap.set("n", "<F9>", "<cmd>!make all run<CR>", { desc = "run 'make all run' from shell" })
 
 -- terminal mode keymaps
 vim.keymap.set("t", "jk", "<C-\\><C-n>", { desc = "Enter Normal mode" })
 
 
--- visual mode keymaps 
+-- visual mode keymaps
 vim.keymap.set("x", "<leader>p", "\"_dP", { desc = "Put and preserve register contents" })
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 -- }}}
-

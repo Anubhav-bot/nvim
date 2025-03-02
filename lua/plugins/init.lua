@@ -24,6 +24,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local opts = { buffer = event.buf }
         vim.keymap.set("n", "gd", function() vim.lsp.buf.definition() end, opts)
         vim.keymap.set("n", "K", function() vim.lsp.buf.hover() end, opts)
+        vim.keymap.set("n", "<leader>fm", function() vim.lsp.buf.format() end, opts)
         vim.keymap.set("n", "<leader>vws", function() vim.lsp.buf.workspace_symbol() end, opts)
         vim.keymap.set("n", "<leader>vsf", function() vim.lsp.buf.document_symbol() end, opts)
         vim.keymap.set("n", "<leader>vca", function() vim.lsp.buf.code_action() end, opts)
@@ -36,13 +37,13 @@ vim.api.nvim_create_autocmd('LspAttach', {
         local client = vim.lsp.get_client_by_id(event.data.client_id)
         if not client then return end
 
-        if client.supports_method('textDocument/formatting') then
-            vim.api.nvim_create_autocmd('BufWritePre', {
-                buffer = event.buf,
-                callback = function()
-                    vim.lsp.buf.format({ bufnr = event.buf, id = client.id })
-                end
-            })
-        end
+        -- if client.supports_method('textDocument/formatting') then
+        --     vim.api.nvim_create_autocmd('BufWritePre', {
+        --         buffer = event.buf,
+        --         callback = function()
+        --             vim.lsp.buf.format({ bufnr = event.buf, id = client.id })
+        --         end
+        --     })
+        -- end
     end
 })
